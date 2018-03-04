@@ -1,11 +1,27 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:App1"
              x:Class="App1.MainPage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                iOS="20, 40, 20, 20"
+                Android="20, 20, 20, 20"
+                WinPhone="20, 20, 20, 20" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand"
+                 HorizontalOptions="FillAndExpand"
+                 Orientation="Vertical"
+                 Spacing="15">
+            
+            <Label Text="Welcome to Xamarin.Forms! Enter your name" />
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+            <Entry x:Name="textNameEntry" Text="Insert Name Here" />
 
+            <Button x:Name="helloButton" Text="Click To Say Hello" Clicked="HelloButton_OnClicked" />
+
+            <Button x:Name="listButton" Text="Click Here for List" Clicked="Page1_OnClicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
